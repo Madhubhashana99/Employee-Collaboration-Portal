@@ -2,7 +2,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
-using Backend.Data; // Assuming your ApplicationDbContext is in Backend.Data
+using Backend.Data;
+using Backend.Services;
+using System;
 
 // The application builder is declared here once:
 var builder = WebApplication.CreateBuilder(args);
@@ -20,10 +22,11 @@ var audience = configuration["Jwt:Audience"];
 
 
 // Add services to the container.
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // 1. Add DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // 2. Add Authentication Service
 builder.Services.AddAuthentication(options =>
