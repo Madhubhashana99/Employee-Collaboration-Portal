@@ -1,11 +1,3 @@
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.csproj.AssemblyReference.cache
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.AssemblyInfoInputs.cache
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.AssemblyInfo.cs
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.csproj.CoreCompileInputs.cache
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.MvcApplicationPartsAssemblyInfo.cs
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.MvcApplicationPartsAssemblyInfo.cache
-D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.sourcelink.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\appsettings.Development.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\appsettings.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.exe
@@ -13,6 +5,7 @@ D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.runtimeconfig.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.pdb
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Backend.xml
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Azure.Core.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Azure.Identity.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\Humanizer.dll
@@ -154,6 +147,14 @@ D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\runtimes
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.csproj.AssemblyReference.cache
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.GeneratedMSBuildEditorConfig.editorconfig
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.AssemblyInfoInputs.cache
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.AssemblyInfo.cs
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.csproj.CoreCompileInputs.cache
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.MvcApplicationPartsAssemblyInfo.cs
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.MvcApplicationPartsAssemblyInfo.cache
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.sourcelink.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\staticwebassets.build.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\staticwebassets.development.json
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\staticwebassets\msbuild.Backend.Microsoft.AspNetCore.StaticWebAssets.props
@@ -165,6 +166,7 @@ D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\scopedcs
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.csproj.Up2Date
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.dll
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\refint\Backend.dll
+D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.xml
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.pdb
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\Backend.genruntimeconfig.cache
 D:\FINAP\Employee-Collaboration-Portal\Backend\Backend\obj\Debug\net8.0\ref\Backend.dll

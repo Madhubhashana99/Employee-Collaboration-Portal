@@ -1,0 +1,7 @@
+/* src/styles.css */
+/* Import Bootstrap CSS */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Optional: Add custom styles here */
+/* We're also using Bootstrap Icons (bi), so you might need to install those too */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");

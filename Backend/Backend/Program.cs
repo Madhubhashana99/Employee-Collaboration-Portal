@@ -3,32 +3,45 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
-using Backend.Services;
-using System;
+using Backend.Services; 
+using Backend.Interfaces; 
+using System.Reflection;
+using Microsoft.OpenApi.Models;
 
-// The application builder is declared here once:
 var builder = WebApplication.CreateBuilder(args);
 
-// --- JWT Configuration Setup ---
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
+
+const string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:4200")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>(); // Added/Confirmed
+
+
 var configuration = builder.Configuration;
-
-// IMPORTANT: Store the key securely. Reading from appsettings.json is done here.
-var jwtSecretKey = configuration["Jwt:Key"] ??
-                   throw new InvalidOperationException("JWT Secret Key not found in configuration.");
-
+var jwtSecretKey = configuration["Jwt:Key"]
+                     ?? throw new InvalidOperationException("JWT Secret Key not found in configuration.");
 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecretKey));
 var issuer = configuration["Jwt:Issuer"];
 var audience = configuration["Jwt:Audience"];
 
-
-// Add services to the container.
-builder.Services.AddScoped<IAuthService, AuthService>();
-
-// 1. Add DbContext
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-// 2. Add Authentication Service
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -48,31 +61,63 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// 3. Add Authorization Service
+
+builder.Services.AddSwaggerGen(options =>
+{
+    // Include XML Comments only if the file exists
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+
+    if (File.Exists(xmlPath))
+    {
+        options.IncludeXmlComments(xmlPath);
+    }
+
+    // JWT Security definition
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter JWT with Bearer into field",
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "Bearer" }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
 builder.Services.AddAuthorization();
-
-
-// Standard setup
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+   
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+app.UseRouting();
+
 app.UseHttpsRedirection();
 
-// --- JWT Middleware Setup (MUST be before app.MapControllers()) ---
-app.UseAuthentication(); // Must be before Authorization
+// Use CORS before authentication & authorization
+app.UseCors(MyAllowSpecificOrigins);
+
+app.UseAuthentication(); // Must come BEFORE Authorization
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();
