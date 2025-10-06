@@ -1,0 +1,114 @@
+
+CREATE DATABASE EmployeePortalDB;
+-- GO
+USE EmployeePortalDB;
+-- GO
+
+Use the database (replace 'EmployeePortalDB' if you named it differently)
+USE EmployeePortalDB;
+GO
+
+
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) NOT NULL UNIQUE,
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+    Role NVARCHAR(20) NOT NULL DEFAULT 'Employee', 
+    IsActive BIT NOT NULL DEFAULT 1
+);
+GO
+
+
+CREATE TABLE Posts (
+    PostID INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(100) NOT NULL,           
+    Content NVARCHAR(MAX) NOT NULL,         
+    AuthorID INT NOT NULL,                  
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE(), 
+    UpdatedAt DATETIME,
+    
+    
+    FOREIGN KEY (AuthorID) REFERENCES Users(UserID)
+);
+GO
+
+
+CREATE TABLE Comments (
+    CommentID INT IDENTITY(1,1) PRIMARY KEY,
+    PostID INT NOT NULL,                    
+    AuthorID INT NOT NULL,                  
+    Content NVARCHAR(500) NOT NULL,
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE(), 
+    
+    
+    FOREIGN KEY (PostID) REFERENCES Posts(PostID) ON DELETE CASCADE,
+    FOREIGN KEY (AuthorID) REFERENCES Users(UserID)
+);
+GO
+
+
+CREATE TABLE PostInteractions (
+    InteractionID INT IDENTITY(1,1) PRIMARY KEY,
+    PostID INT NOT NULL,
+    UserID INT NOT NULL,
+    InteractionType INT NOT NULL CHECK (InteractionType IN (1, -1)), 
+    CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
+    
+    
+    UNIQUE (PostID, UserID), 
+    
+   
+    FOREIGN KEY (PostID) REFERENCES Posts(PostID) ON DELETE CASCADE,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID)
+);
+GO
+
+
+
+INSERT INTO Users (Username, PasswordHash, FirstName, LastName, Role) VALUES
+('admin.user', 'hashed_admin_password', 'Alice', 'Admin', 'Admin'),        
+('employee1', 'hashed_emp1_password', 'Bob', 'Employee', 'Employee'),    
+('employee2', 'hashed_emp2_password', 'Charlie', 'Worker', 'Employee');
+GO
+
+
+INSERT INTO Posts (Title, Content, AuthorID) VALUES
+('Welcome to the Portal!', 'This is the very first post on our new Employee Collaboration Portal!', 1),
+('Monthly Feedback Session', 'Remember to submit your departmental feedback by Friday.', 2),
+('Team Lunch Announcement', 'We are having team lunch next week at the cafeteria.', 2),
+('New Policy Update', 'Please review the updated WFH policy document.', 3);
+GO
+
+
+INSERT INTO Comments (PostID, AuthorID, Content) VALUES
+(1, 2, 'Great work getting this up and running!'),
+(2, 3, 'Thanks for the reminder, I almost forgot.'),
+(2, 1, 'Make sure to be detailed in your submissions.');
+GO
+
+
+INSERT INTO PostInteractions (PostID, UserID, InteractionType) VALUES
+(2, 1, 1),
+-- User 3 Likes Post 2
+(2, 3, 1),
+-- User 2 Likes Post 1
+(1, 2, 1),
+-- User 3 Dislikes Post 3 (InteractionType = -1)
+(3, 3, -1);
+GO
+
+
+SELECT 
+    p.Title,
+    p.Content,
+    u.FirstName + ' ' + u.LastName AS AuthorName,
+    p.CreatedAt,
+    SUM(CASE WHEN i.InteractionType = 1 THEN 1 ELSE 0 END) AS TotalLikes, 
+    SUM(CASE WHEN i.InteractionType = -1 THEN 1 ELSE 0 END) AS TotalDislikes 
+FROM Posts p
+INNER JOIN Users u ON p.AuthorID = u.UserID
+LEFT JOIN PostInteractions i ON p.PostID = i.PostID
+GROUP BY p.PostID, p.Title, p.Content, u.FirstName, u.LastName, p.CreatedAt
+ORDER BY p.CreatedAt DESC; -- Sort by most recent [cite: 34]
+GO
