@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\controllers\\postinteractionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\postinteractionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\dto\\postinteractiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\dto\\postinteractiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\models\\postinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\models\\postinteraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\dto\\commentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\dto\\commentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\dto\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\dto\\commentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|d:\\finap\\employee-collaboration-portal\\backend\\backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{65BB2763-BD96-4733-A169-9CADB1EB7FB5}|Backend\\Backend.csproj|solutionrelative:backend\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -34,24 +70,141 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PostInteractionDto.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\PostInteractionDto.cs",
+              "RelativeDocumentMoniker": "Backend\\DTO\\PostInteractionDto.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\PostInteractionDto.cs",
+              "RelativeToolTip": "Backend\\DTO\\PostInteractionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:37:24.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PostInteractionsController.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\PostInteractionsController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\PostInteractionsController.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\PostInteractionsController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\PostInteractionsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:33:56.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostInteraction.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\PostInteraction.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\PostInteraction.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\PostInteraction.cs",
+              "RelativeToolTip": "Backend\\Models\\PostInteraction.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:30:32.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\CommentsController.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\CommentsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:11:17.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "Backend\\Controllers\\PostsController.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\PostsController.cs",
+              "RelativeToolTip": "Backend\\Controllers\\PostsController.cs",
+              "ViewState": "AgIAAJEAAACAmZmZmZkVwJ8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T08:36:12.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CommentCreateDTO.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\CommentCreateDTO.cs",
+              "RelativeDocumentMoniker": "Backend\\DTO\\CommentCreateDTO.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\CommentCreateDTO.cs",
+              "RelativeToolTip": "Backend\\DTO\\CommentCreateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:09:27.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CommentDTO.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\CommentDTO.cs",
+              "RelativeDocumentMoniker": "Backend\\DTO\\CommentDTO.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\CommentDTO.cs",
+              "RelativeToolTip": "Backend\\DTO\\CommentDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:07:49.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Comment.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Comment.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\Comment.cs",
+              "RelativeToolTip": "Backend\\Models\\Comment.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T09:03:04.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Post.cs",
+              "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "Backend\\Models\\Post.cs",
+              "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Models\\Post.cs",
+              "RelativeToolTip": "Backend\\Models\\Post.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T08:39:00.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "UsersController.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Backend\\Controllers\\UsersController.cs",
               "ToolTip": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Backend\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAADMAAABAMzMzMzMnwDwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAACQzMzMzMwowDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-05T21:38:43.35Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 10,
               "Title": "UserService.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Backend\\Services\\UserService.cs",
@@ -59,12 +212,11 @@
               "RelativeToolTip": "Backend\\Services\\UserService.cs",
               "ViewState": "AgIAACMAAADAmZmZmZkpwC4AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T21:28:57.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T21:28:57.874Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "IUserService.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\Interfaces\\IUserService.cs",
               "RelativeDocumentMoniker": "Backend\\Interfaces\\IUserService.cs",
@@ -72,12 +224,11 @@
               "RelativeToolTip": "Backend\\Interfaces\\IUserService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T21:28:41.867Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T21:28:41.867Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "UserResponseDTO.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\UserResponseDTO.cs",
               "RelativeDocumentMoniker": "Backend\\DTO\\UserResponseDTO.cs",
@@ -85,12 +236,11 @@
               "RelativeToolTip": "Backend\\DTO\\UserResponseDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T21:27:33.223Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T21:27:33.223Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "UserCreateDTO.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\UserCreateDTO.cs",
               "RelativeDocumentMoniker": "Backend\\DTO\\UserCreateDTO.cs",
@@ -98,12 +248,11 @@
               "RelativeToolTip": "Backend\\DTO\\UserCreateDTO.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAcwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T21:23:39.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T21:23:39.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "D:\\FINAP\\Employee-Collaboration-Portal\\Backend\\Backend\\DTO\\UserDTO.cs",
               "RelativeDocumentMoniker": "Backend\\DTO\\UserDTO.cs",
@@ -111,8 +260,7 @@
               "RelativeToolTip": "Backend\\DTO\\UserDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-05T21:22:51.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-05T21:22:51.134Z"
             }
           ]
         }
