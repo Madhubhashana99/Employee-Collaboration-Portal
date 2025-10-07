@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="login-container">
+  <h2>Employee Portal Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" formControlName="username" required>
+      <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="error-message">
+        <span *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</span>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" required>
+      <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="error-message">
+        <span *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</span>
+      </div>
+    </div>
+    
+    <button type="submit" [disabled]="loginForm.invalid || isLoading">
+      {{ isLoading ? 'Logging In...' : 'Login' }}
+    </button>
+    
+    <div *ngIf="errorMessage" class="alert error-message">
+      {{ errorMessage }}
+    </div>
+    
+  </form>
+</div>

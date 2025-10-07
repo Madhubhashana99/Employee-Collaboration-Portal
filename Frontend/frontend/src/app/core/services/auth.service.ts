@@ -1,63 +1,75 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
-import { LoginRequest, User } from '../models/user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+// You might need to install 'jwt-decode': npm install jwt-decode
+import { jwtDecode } from 'jwt-decode'; 
 
-@Injectable({ providedIn: 'root' })
+// --- Models (Assuming these interfaces are defined in src/app/models/user.ts) ---
+export interface TokenResponse {
+  token: string;
+}
+// --------------------------------------------------------------------------------
+
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  private apiUrl = 'api/Auth';
-  private loggedIn = new BehaviorSubject<boolean>(this.hasToken());
-  isLoggedIn$ = this.loggedIn.asObservable();
+  private apiUrl = environment.apiUrl + '/Auth';
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  private hasToken(): boolean {
-    return !!localStorage.getItem('authToken');
+  login(username: string, password: string) {
+    // Backend endpoint: POST /api/Auth/login
+    return this.http.post<TokenResponse>(`${this.apiUrl}/login`, { username, password });
   }
 
-  login(credentials: LoginRequest): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>(`${this.apiUrl}/login`, credentials).pipe(
-      tap(response => {
-        localStorage.setItem('authToken', response.token);
-        this.loggedIn.next(true);
-        // Implement token decoding to get User info/Role for routing later
-      }),
-      catchError(error => {
-        this.loggedIn.next(false);
-        throw error;
-      })
-    );
-  }
-
-  logout(): void {
-    localStorage.removeItem('authToken');
-    this.loggedIn.next(false);
-    this.router.navigate(['/login']);
+  setToken(token: string): void {
+    localStorage.setItem('auth_token', token);
   }
 
   getToken(): string | null {
-    return localStorage.getItem('authToken');
+    return localStorage.getItem('auth_token');
   }
 
-  // A basic implementation to get the user's role from the token (for [Authorize(Roles)])
-  getRole(): string | null {
+  getUserId(): number | null {
     const token = this.getToken();
     if (!token) return null;
-
     try {
-      const payload = JSON.parse(atob(token.split('.')[1]));
-      // The backend puts the role in the claim `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
-      // You may need to adjust the claim key depending on your JWT setup.
-      return payload.role || payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'] || null;
+      const decoded: any = jwtDecode(token);
+      // Ensure this claim key matches what your .NET backend uses for User ID (typically 'nameid')
+      return decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']
+        ? parseInt(decoded['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier']) 
+        : null;
     } catch (e) {
-      console.error("Failed to decode token:", e);
       return null;
     }
   }
 
+  getUserRole(): 'Admin' | 'Employee' | null {
+    const token = this.getToken();
+    if (!token) return null;
+    try {
+      const decoded: any = jwtDecode(token);
+      // Ensure this claim key matches what your .NET backend uses for Role
+      const role = decoded['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+      return (role === 'Admin' || role === 'Employee') ? role : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  isAuthenticated(): boolean {
+    const token = this.getToken();
+    return !!token; // Check if token exists
+  }
+
   isAdmin(): boolean {
-    return this.getRole() === 'Admin';
+    return this.getUserRole() === 'Admin';
+  }
+
+  logout(): void {
+    localStorage.removeItem('auth_token');
+    this.router.navigate(['/login']);
   }
 }
