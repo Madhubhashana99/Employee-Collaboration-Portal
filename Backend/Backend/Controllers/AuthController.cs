@@ -17,7 +17,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request) // No longer ambiguous
+        public async Task<IActionResult> Login([FromBody] LoginRequest request) 
         {
 
             if (string.IsNullOrEmpty(request.Username) || string.IsNullOrEmpty(request.Password))
@@ -25,8 +25,7 @@ namespace Backend.Controllers
                 return BadRequest(new { message = "Username and Password are required." });
             }
 
-            // The compiler now knows these are non-null inside this block.
-            // The warnings should be resolved.
+            
             var token = await _authService.AuthenticateUser(request.Username, request.Password);
 
             if (token == null)

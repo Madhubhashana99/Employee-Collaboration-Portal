@@ -4,7 +4,7 @@
     {
         public int PostID { get; set; }
         public string Title { get; set; } = string.Empty;
-        public string ContentSnippet { get; set; } = string.Empty; // A short excerpt
+        public string ContentSnippet { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
 
         // Author details

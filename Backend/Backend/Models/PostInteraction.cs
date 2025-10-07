@@ -17,7 +17,6 @@ namespace Backend.Models
 
         [Required]
         [MaxLength(8)]
-        // InteractionType is enforced to be 'Like' or 'Dislike' by the DB constraint
         public string InteractionType { get; set; } = string.Empty;
 
         public DateTime InteractionDate { get; set; } = DateTime.UtcNow;

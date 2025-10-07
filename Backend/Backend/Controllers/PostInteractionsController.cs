@@ -18,11 +18,11 @@ namespace Backend.Controllers
             _context = context;
         }
 
-        // Add or update like/dislike
+        
         [HttpPost("react")]
         public async Task<IActionResult> React([FromBody] PostInteraction dto)
         {
-            // Check if user already reacted
+          
             var existing = await _context.PostInteractions
                 .FirstOrDefaultAsync(p => p.PostID == dto.PostID && p.UserID == dto.UserID);
 
@@ -46,7 +46,7 @@ namespace Backend.Controllers
             return Ok();
         }
 
-        // Get total likes and dislikes for a post
+       
         [HttpGet("{postId}/summary")]
         public async Task<IActionResult> GetSummary(int postId)
         {

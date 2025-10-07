@@ -25,7 +25,7 @@ namespace Backend.Controllers
         [Authorize(Roles = "Employee,Admin")]
         public async Task<IActionResult> CreatePost([FromBody] Post model)
         {
-            // Get logged-in user's ID from token (JWT claim)
+           
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userId))
                 return Unauthorized("User not authenticated.");
@@ -37,7 +37,7 @@ namespace Backend.Controllers
             {
                 Title = model.Title,
                 Content = model.Content,
-                AuthorID = int.Parse(userId), // ✅ EF model property should be AuthorId (PascalCase)
+                AuthorID = int.Parse(userId), 
                 CreatedAt = DateTime.Now
             };
 
@@ -77,9 +77,7 @@ namespace Backend.Controllers
             return Ok(posts);
         }
 
-        // --------------------------------------------------------------------
-        // PUT /api/posts/{id} → Update own post
-        // --------------------------------------------------------------------
+       
         [HttpPut("{id}")]
         [Authorize(Roles = "Employee,Admin")]
         public async Task<IActionResult> UpdatePost(int id, [FromBody] Post updated)
@@ -106,9 +104,7 @@ namespace Backend.Controllers
             return Ok(new { message = "Post updated successfully." });
         }
 
-        // --------------------------------------------------------------------
-        // DELETE /api/posts/{id} → Delete own post
-        // --------------------------------------------------------------------
+      
         [HttpDelete("{id}")]
         [Authorize(Roles = "Employee,Admin")]
         public async Task<IActionResult> DeletePost(int id)
@@ -139,7 +135,7 @@ namespace Backend.Controllers
                 .Include(p => p.Author)
                 .AsQueryable();
 
-            // Filter by author
+          
             if (authorId.HasValue)
             {
                 postsQuery = postsQuery.Where(p => p.AuthorID == authorId.Value);
@@ -151,7 +147,7 @@ namespace Backend.Controllers
                 "recent" => postsQuery.OrderByDescending(p => p.CreatedAt),
                 "likes" => postsQuery
                     .OrderByDescending(p => p.Interactions.Count(pi => pi.InteractionType == "Like")),
-                _ => postsQuery.OrderByDescending(p => p.CreatedAt) // default
+                _ => postsQuery.OrderByDescending(p => p.CreatedAt) 
             };
 
             var posts = await postsQuery

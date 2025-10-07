@@ -23,7 +23,7 @@ namespace Backend.Controllers
             _context = context;
         }
 
-        // GET: api/posts/{postId}/comments
+        
         [HttpGet]
         public async Task<IActionResult> GetComments(int postId)
         {
@@ -44,7 +44,7 @@ namespace Backend.Controllers
             return Ok(comments);
         }
 
-        // POST: api/posts/{postId}/comments
+        
         [HttpPost]
         public async Task<IActionResult> AddComment(int postId, [FromBody] CommentCreateDTO commentCreateDto)
         {
@@ -67,7 +67,7 @@ namespace Backend.Controllers
             _context.Comments.Add(comment);
             await _context.SaveChangesAsync();
 
-            // Return as CommentDTO
+            
             var createdComment = await _context.Comments
                 .Include(c => c.Author)
                 .Where(c => c.CommentID == comment.CommentID)

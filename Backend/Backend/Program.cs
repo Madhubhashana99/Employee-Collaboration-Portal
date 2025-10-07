@@ -32,7 +32,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserService, UserService>(); // Added/Confirmed
+builder.Services.AddScoped<IUserService, UserService>(); 
 
 
 var configuration = builder.Configuration;
@@ -64,7 +64,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddSwaggerGen(options =>
 {
-    // Include XML Comments only if the file exists
+  
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
 
@@ -73,7 +73,7 @@ builder.Services.AddSwaggerGen(options =>
         options.IncludeXmlComments(xmlPath);
     }
 
-    // JWT Security definition
+   
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -111,10 +111,9 @@ app.UseRouting();
 
 app.UseHttpsRedirection();
 
-// Use CORS before authentication & authorization
 app.UseCors(MyAllowSpecificOrigins);
 
-app.UseAuthentication(); // Must come BEFORE Authorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
