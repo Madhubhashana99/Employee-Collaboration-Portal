@@ -1,1 +1,44 @@
-<p>post-list works!</p>
+<div class="posts-main-container">
+  <h1>Employee Collaboration Board</h1>
+
+  <button routerLink="/posts/create" class="btn-primary" *ngIf="currentUser">
+    Create New Post
+  </button>
+
+  <div class="filter-sort-controls">
+    
+    <div class="control-group">
+      <label for="sortBy">Sort By:</label>
+      <select id="sortBy" [(ngModel)]="sortBy" (change)="sortPosts()">
+        <option value="recent">Most Recent</option>
+        <option value="likes">Most Liked</option>
+      </select>
+    </div>
+
+    <div class="control-group">
+      <label for="filterAuthor">Filter by Author:</label>
+      <select id="filterAuthor" #authorSelect (change)="filterByAuthor(authorSelect.value)">
+        <option [value]="null">All Authors</option>
+        <option *ngFor="let author of authors" [value]="author.userId">
+            {{ author.username }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <hr>
+
+  <div *ngIf="posts.length > 0; else noPosts" class="post-list">
+    <app-post-detail 
+      *ngFor="let post of posts" 
+      [post]="post"
+      (postDeleted)="handlePostDelete($event)"
+      (interacted)="handleInteraction($event.postId, $event.type)">
+    </app-post-detail>
+  </div>
+
+  <ng-template #noPosts>
+    <p class="no-content-message">No posts found. Be the first to post!</p>
+  </ng-template>
+
+</div>

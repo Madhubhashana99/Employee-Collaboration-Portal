@@ -1,1 +1,63 @@
-<p>post-details works!</p>
+<div class="post-card">
+  <div class="post-header">
+    <h3>{{ post.title }}</h3>
+    <div class="post-meta">
+      <p>By **{{ post.author }}** on {{ post.createdAt | date: 'medium' }}</p>
+      <p *ngIf="post.updatedAt"> (Updated: {{ post.updatedAt | date: 'short' }})</p>
+    </div>
+  </div>
+
+  <div class="post-content">
+    <p>{{ post.content }}</p>
+  </div>
+
+  <div class="post-actions">
+    <button (click)="onLike()" class="interaction-btn like">
+      👍 Like ({{ post.likes }})
+    </button>
+    <button (click)="onDislike()" class="interaction-btn dislike">
+      👎 Dislike ({{ post.dislikes }})
+    </button>
+    
+    <button (click)="toggleComments()" class="interaction-btn comment-toggle">
+      {{ showComments ? 'Hide' : 'Show' }} Comments
+    </button>
+    
+    <ng-container *ngIf="isOwner">
+      <button (click)="onEdit()" class="action-btn edit">Edit</button>
+      <button (click)="onDelete()" class="action-btn delete">Delete</button>
+    </ng-container>
+  </div>
+
+  <div *ngIf="showComments" class="comments-section">
+    <h4>Comments:</h4>
+    
+    <div *ngIf="comments.length > 0; else noComments" class="comment-list">
+      <div *ngFor="let comment of comments" class="comment-item">
+        <p class="comment-text">{{ comment.content }}</p>
+        <p class="comment-meta">
+          — {{ comment.authorName }} on {{ comment.createdAt | date: 'short' }}
+        </p>
+      </div>
+    </div>
+    <ng-template #noComments>
+      <p>No comments yet. Be the first to reply!</p>
+    </ng-template>
+    
+    <form [formGroup]="commentForm" (ngSubmit)="onAddComment()" class="add-comment-form">
+      <textarea 
+        formControlName="content" 
+        placeholder="Add a comment..." 
+        rows="2"
+        required>
+      </textarea>
+      
+      <div *ngIf="commentForm.get('content')?.invalid && commentForm.get('content')?.touched" class="error-message small">
+        <span *ngIf="commentForm.get('content')?.errors?.['required']">Comment content is required.</span>
+        <span *ngIf="commentForm.get('content')?.errors?.['maxlength']">Comment is too long.</span>
+      </div>
+
+      <button type="submit" [disabled]="commentForm.invalid">Submit Comment</button>
+    </form>
+  </div>
+</div>
